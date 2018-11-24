@@ -2,9 +2,9 @@ package ua.i.sonne;
 
 public class Phone {
 
+    private static Network network = new Network();
     private String model;
     private int number;
-    private Network network = new Network();
 
     public Phone() {
     }

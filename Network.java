@@ -2,8 +2,8 @@ package ua.i.sonne;
 
 public class Network {
 
-    private static Phone[] phones = new Phone[5];
-    private static int index = 0;
+    private Phone[] phones = new Phone[5];
+    private int index = 0;
 
     public Network (){
     }

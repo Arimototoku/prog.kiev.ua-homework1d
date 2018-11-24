@@ -4,6 +4,7 @@ public class Phone {
 
     private String model;
     private int number;
+    private Network network = new Network();
 
     public Phone() {
     }
@@ -31,10 +32,9 @@ public class Phone {
 
     /**
      * Method is registering phone in Network
-     * @param phone
      */
-    public static void registerInNetwork(Phone phone){
-        Network.addNewNumber(phone);
+    public void registerInNetwork(){
+        network.addNewNumber(this);
     }
 
     /**
@@ -44,10 +44,10 @@ public class Phone {
     public void call(int number){
 
         System.out.println("\n" + this.getModel() + " says:\nTry to call to number " + number + "...");
-        for (int i = 0; i < Network.getPhones().length; i++) {
-            if (Network.getPhones()[i].getNumber() == number){
+        for (int i = 0; i < network.getPhones().length; i++) {
+            if (network.getPhones()[i].getNumber() == number){
                 System.out.println("Number is exist");
-                Network.getPhones()[i].incomingCall();
+                network.getPhones()[i].incomingCall();
                 return;
             }
         }

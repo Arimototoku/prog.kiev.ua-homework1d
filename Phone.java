@@ -2,16 +2,18 @@ package ua.i.sonne;
 
 public class Phone {
 
-    private static Network network = new Network();
     private String model;
     private int number;
+    private Network network;
 
     public Phone() {
     }
 
-    public Phone(String model, int number) {
+    public Phone(String model, int number, Network network) {
         this.model = model;
         this.number = number;
+        this.network = network;
+        registerInNetwork(network);
     }
 
     public String getModel() {
@@ -30,10 +32,18 @@ public class Phone {
         this.number = number;
     }
 
+    public Network getNetwork() {
+        return network;
+    }
+
+    public void setNetwork(Network network) {
+        this.network = network;
+    }
+
     /**
      * Method is registering phone in Network
      */
-    public void registerInNetwork(){
+    public void registerInNetwork(Network network){
         network.addNewNumber(this);
     }
 

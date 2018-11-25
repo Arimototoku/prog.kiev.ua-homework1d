@@ -17,6 +17,12 @@ public class Network {
      * @param phone
      */
     public void addNewNumber (Phone phone){
+        for (int i = 0; i < phones.length; i++) {
+            if (phones[i] == phone){
+                System.out.println("This number is registered already");
+                return;
+            }
+        }
         phones[index] = phone;
         index++;
     }
